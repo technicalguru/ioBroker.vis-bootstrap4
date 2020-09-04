@@ -1,0 +1,82 @@
+{
+    "common": {
+        "name": "vis-bootstrap4",
+        "version": "0.0.1",
+        "news": {
+            "0.0.1": {
+                "en": "initial release",
+                "de": "Erstveröffentlichung",
+                "ru": "Начальная версия",
+                "pt": "lançamento inicial",
+                "nl": "Eerste uitgave",
+                "fr": "Première version",
+                "it": "Versione iniziale",
+                "es": "Versión inicial",
+                "pl": "Pierwsze wydanie",
+                "zh-cn": "首次出版"
+            }
+        },
+        "title": "Vis Bootstrap 4",
+        "titleLang": {
+            "en": "Vis Bootstrap 4",
+            "de": "Vis Bootstrap 4",
+            "ru": "Vis Bootstrap 4",
+            "pt": "Vis Bootstrap 4",
+            "nl": "Vis-bootstrap 4",
+            "fr": "Vis Bootstrap 4",
+            "it": "Vis Bootstrap 4",
+            "es": "Vis Bootstrap 4",
+            "pl": "Vis Bootstrap 4",
+            "zh-cn": "Vis Bootstrap 4"
+        },
+        "desc": {
+            "en": "Bootstrap 4 designs for Vis",
+            "de": "Bootstrap 4 Designs für Vis",
+            "ru": "Bootstrap 4 дизайна для Vis",
+            "pt": "Projetos Bootstrap 4 para Vis",
+            "nl": "Bootstrap 4 ontwerpen voor Vis",
+            "fr": "Bootstrap 4 designs pour Vis",
+            "it": "Bootstrap 4 design per Vis",
+            "es": "Bootstrap 4 diseños para Vis",
+            "pl": "Bootstrap 4 projekty dla Vis",
+            "zh-cn": "适用于Vis的Bootstrap 4设计"
+        },
+        "authors": [
+            "technicalguru <github@ralph-schuster.eu>"
+        ],
+        "keywords": [
+            "bootstrap",
+            "vis",
+            "responsive",
+            "grid",
+            "layout",
+            "web"
+        ],
+        "license": "MIT",
+        "platform": "Javascript/Node.js",
+        "main": "main.js",
+        "icon": "vis-bootstrap4.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/technicalguru/ioBroker.vis-bootstrap4/master/admin/vis-bootstrap4.png",
+        "readme": "https://github.com/technicalguru/ioBroker.vis-bootstrap4/blob/master/README.md",
+        "loglevel": "info",
+        "restartAdapters": [
+            "vis"
+        ],
+        "localLink": "%web_protocol%://%ip%:%web_port%/vis/edit.html",
+        "onlyWWW": true,
+        "noConfig": true,
+        "singleton": true,
+        "type": "visualization-widgets",
+        "mode": "once",
+        "dependencies": [
+            "vis"
+        ]
+    },
+    "native": {
+        "option1": true,
+        "option2": "42"
+    },
+    "objects": [],
+    "instanceObjects": []
+}
