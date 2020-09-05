@@ -1,4 +1,61 @@
+/* Common Bootstrap4 CSS */
+@import 'bootstrap.min.css';
+
 /* Style your widget here */
 .vis-bootstrap4-class {
     font-style: italic;
+}
+
+body {
+	overflow: hidden;
+}
+
+.vis-b4-p-5 {
+	padding: 5px;
+}
+
+.vis-b4-p-5-10 {
+	padding: 5px 10px;
+}
+
+.vis-b4-p-10 {
+	padding: 10px;
+}
+
+.vis-b4-p-10-15 {
+	padding: 10px 15px;
+}
+
+.vis-b4-p-15 {
+	padding: 15px;
+}
+
+.vis-b4-content {
+	overflow: hidden;
+	height: 100%;
+}
+
+.vis-b4-left {
+	min-height: 100% !important;
+	}
+
+.vis-b4-right {
+	min-height: 100% !important;
+	}
+
+.vis-b4-footer {	
+	position: absolute;
+	bottom: -0;
+	width: 100%;
+}
+
+/* Tweak the Bootstrap */
+.vis-b4-layout .col,
+.vis-b4-layout div[class^='col-md-'] {
+	padding: 0;
+}
+
+/* Tweak the Vis UI */
+.vis-b4-main {
+	min-height: 100% !important;
 }

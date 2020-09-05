@@ -35,6 +35,13 @@ vis.binds["vis-bootstrap4"] = {
         if (vis.binds["vis-bootstrap4"].version) {
             console.log('Version vis-bootstrap4: ' + vis.binds["vis-bootstrap4"].version);
             vis.binds["vis-bootstrap4"].version = null;
+
+            // add Bootstrap JS only when not in Edit-Mode!!!!
+            if (!vis.editMode) {
+                $(
+                    "<script type=\"text\/javascript\" src=\"widgets/vis-bootstrap4/js/bootstrap.bundle.min.js\"></script>"
+                ).insertAfter("body");
+            }
         }
     },
     createWidget: function (widgetID, view, data, style) {

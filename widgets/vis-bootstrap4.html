@@ -99,6 +99,43 @@
     You can do "if" conditions and "for" cycles.
 
 -->
+<!-- basic Container -->
+<script id="tplVis-bootstrap4Layout"
+        type="text/ejs"
+        class="vis-tpl"
+        data-vis-set="vis-bootstrap4"
+        data-vis-prev='<img src="widgets/vis-bootstrap4/images/layout.png"></img>'
+        data-vis-type="container"
+        data-vis-name="Layout"
+        data-vis-attrs="main_view/views;header_view/views;left_view/views;right_view/views;footer_view/views">
+    <div class="vis-b4-layout  container-fluid h-100">
+        <div class="row">
+           <div class="col bg-info">
+                 <div data-vis-contains="<%= this.data.attr('header_view') %>" class="vis-widget-body vis-view-container"></div>
+           </div>
+        </div>
+        <div class="row vis-b4-content">
+           <div class="col-md-2 vis-b4-left">
+                 <div data-vis-contains="<%= this.data.attr('left_view') %>" class="vis-widget-body vis-view-container"></div>
+           </div>
+           <div class="col">
+              <div class="vis-widget vis-b4-main <%== this.data.attr('class') %>" id="<%= this.data.attr('wid') %>">
+                 <div data-vis-contains="<%= this.data.attr('main_view') %>" class="vis-widget-body vis-view-container"></div>
+              </div>
+           </div>
+           <div class="col-md-2 vis-b4-right">
+                 <div data-vis-contains="<%= this.data.attr('right_view') %>" class="vis-widget-body vis-view-container"></div>
+           </div>
+        </div>
+        <div class="row vis-b4-footer">
+           <div class="col">
+                 <div data-vis-contains="<%= this.data.attr('footer_view') %>" class="vis-widget-body vis-view-container"></div>
+           </div>
+        </div>
+    </div>
+</script>
+
+
 <script id="tplVis-bootstrap4ShowInstance"
         type="text/ejs"
         class="vis-tpl"

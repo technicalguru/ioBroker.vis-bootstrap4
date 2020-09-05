@@ -11,8 +11,43 @@
 [![NPM](https://nodei.co/npm/iobroker.vis-bootstrap4.png?downloads=true)](https://nodei.co/npm/iobroker.vis-bootstrap4/)
 
 ## vis-bootstrap4 adapter for ioBroker
+This adapter intends to provide basic Bootstrap 4 features for vis. The main target is to ease the creation of standard responsive design. It provides a few widgets in set "vis-bootstrap4" that are described here.
 
-Bootstrap 4 designs for Vis
+## Getting started
+
+### General Note
+* The adapter hides scrollbars to display better on touchpad devices.
+* It is more convenient to define style attributes in CSS files (CSS tab in your view) instead of putting them in to each individual widget and/or view.
+* Try to avoid absolute widget positioning. Use "relative" positioning and auto widths and height wherever possible. This will ensure best responsive behaviour.
+
+### Naming Convention Proposal
+Please think about a naming convention for your project before you start. Here is a recommendation:
+
+* `_landingPage` - entry point into your application, the view VIS will open to start
+* `pageXXX` - views that define complete pages
+* `viewXXX` - views that are building blocks and will be combined within other pages
+* `headerXXX` - views that you use for header bars
+* `footerXXX` - views that you use for footer bars
+* `menuXXX` - views that define (navigation) menus
+
+This is a proposal only. The vis-bootstrap4 adapter does not assume any convention.
+
+### Viewport Views
+Layouts and grids (viewports) set their padding to 0. Hence, the view that you configure to show inside must define its own padding. Some helper CSS classes exist to define these paddings automatically:
+
+* `vis-b4-p-5` - all paddings are 5px
+* `vis-b4-p-5-10` - vertical padding 5px, horizontal padding 10px
+* `vis-b4-p-10` - all paddings are 10px
+* `vis-b4-p-10-15` - vertical padding 10px, horizontal padding 15px
+* `vis-b4-p-15` - all paddings are 15px
+
+
+## Widgets
+
+### Layout
+This widget provides a very common responsive 3-column layout that includes a header and a footer row. Add this widget to an empty view and configure the views that you want to use at the respective parts in the layout.
+
+You can switch off individual parts except the main view. Make sure that you position the widget "relative" in section "CSS Common"
 
 ## Developer manual
 This section is intended for the developer. It can be deleted later
@@ -73,7 +108,7 @@ For later updates, the above procedure is not necessary. Just do the following:
 ## Changelog
 
 ### 0.0.1
-* (technicalguru) initial release
+* (technicalguru) initial test release
 
 ## License
 MIT License
