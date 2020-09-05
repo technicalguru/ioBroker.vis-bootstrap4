@@ -31,22 +31,30 @@ body {
 }
 
 .vis-b4-content {
-	overflow: hidden;
-	height: 100%;
 }
 
-.vis-b4-left {
-	min-height: 100% !important;
+@media (min-width: 768px) {
+	.vis-b4-left {
+		min-height: 100vh;
 	}
 
-.vis-b4-right {
-	min-height: 100% !important;
+	.vis-b4-right {
+		min-height: 100vh;
 	}
+	
+	.vis-b4-responsive-footer {
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1030;
+	}
+}
 
-.vis-b4-footer {	
-	position: absolute;
-	bottom: -0;
+.vis-b4-responsive-footer {	
 	width: 100%;
+	right: 0;
+	left: 0;
 }
 
 /* Tweak the Bootstrap */
@@ -57,5 +65,5 @@ body {
 
 /* Tweak the Vis UI */
 .vis-b4-main {
-	min-height: 100% !important;
+	overflow: visible;
 }

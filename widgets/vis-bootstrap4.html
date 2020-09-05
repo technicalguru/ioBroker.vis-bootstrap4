@@ -108,9 +108,9 @@
         data-vis-type="container"
         data-vis-name="Layout"
         data-vis-attrs="main_view/views;header_view/views;left_view/views;right_view/views;footer_view/views">
-    <div class="vis-b4-layout  container-fluid h-100">
+    <div class="vis-b4-layout container-fluid">
         <div class="row">
-           <div class="col bg-info">
+           <div class="col">
                  <div data-vis-contains="<%= this.data.attr('header_view') %>" class="vis-widget-body vis-view-container"></div>
            </div>
         </div>
@@ -127,11 +127,9 @@
                  <div data-vis-contains="<%= this.data.attr('right_view') %>" class="vis-widget-body vis-view-container"></div>
            </div>
         </div>
-        <div class="row vis-b4-footer">
-           <div class="col">
-                 <div data-vis-contains="<%= this.data.attr('footer_view') %>" class="vis-widget-body vis-view-container"></div>
-           </div>
-        </div>
+    </div>
+    <div class="vis-b4-responsive-footer">
+         <div data-vis-contains="<%= this.data.attr('footer_view') %>" class="vis-widget-body vis-view-container"></div>
     </div>
 </script>
 
