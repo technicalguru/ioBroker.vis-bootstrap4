@@ -157,7 +157,7 @@ vis.binds["vis-bootstrap4"] = {
         var html = '';
 		var colspan = data.colspan != 'auto' ? '-'+data.colspan : '';
 		
-		html = '<div class="container-fluid">';
+		html = '<div class="container-fluid vis-b4-grid">';
 		for (let row=0; row<data.numRows; row++) {
  			html += '<div class="row">';
 			var rowViews = data.attr('rowViews'+(row+1));
