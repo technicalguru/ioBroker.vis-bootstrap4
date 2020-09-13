@@ -155,18 +155,30 @@ vis.binds["vis-bootstrap4"] = {
     createGrid: function (el, data) {
 		var $this = $(el);
         var html = '';
-		var colspan = data.colspan != 'auto' ? '-'+data.colspan : '';
+		var colspan = data.colspan != 'auto' ? parseInt(data.colspan) : 0;
 		
 		html = '<div class="container-fluid vis-b4-grid">';
 		for (let row=0; row<data.numRows; row++) {
  			html += '<div class="row">';
 			var rowViews = data.attr('rowViews'+(row+1));
-			var colViews = (typeof rowViews != 'undefined') && (rowViews != '') ? new String(rowViews).split(',') : [];
+			var colViews = (typeof rowViews != 'undefined') && (rowViews != '') ? new String(rowViews).split(';') : [];
 			for (let col=0; col<data.numCols; col++) {
-				var visView = this.checkData(colViews[col], 'rowViews'+(row+1)+'['+(col+1)+']');
-				html += '<div class="col-'+data.size+colspan+'">'+
+				var colDef  = [];
+				var colSpan = colspan;
+				var rowSpan = 1;
+				if ((typeof colViews[col] != 'undefined') && (colViews[col] != 'undefined')) {
+					colDef  = new String(colViews[col]).split(',');
+					rowSpan = colDef.length > 1 ? colDef[1] : 1;
+					colSpan = colDef.length > 2 ? colDef[2]*colspan : colspan;
+				} else {
+					colDef = [ undefined, 1, 1];
+				}
+				var visView = this.checkData(colDef[0], 'rowViews'+(row+1)+'['+(col+1)+']');
+				html += '<div class="col-'+data.size+(colSpan > 0 ? '-'+colSpan : '')+'">'+
 							visView+
 						'</div>';
+				// Fix the column
+				col += colDef[2]-1;
 			}
 			html += '</div>';
 		}
