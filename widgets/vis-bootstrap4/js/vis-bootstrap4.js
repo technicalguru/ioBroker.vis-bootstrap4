@@ -165,20 +165,23 @@ vis.binds["vis-bootstrap4"] = {
 			for (let col=0; col<data.numCols; col++) {
 				var colDef  = [];
 				var colSpan = colspan;
-				var rowSpan = 1;
 				if ((typeof colViews[col] != 'undefined') && (colViews[col] != 'undefined')) {
 					colDef  = new String(colViews[col]).split(',');
-					rowSpan = colDef.length > 1 ? colDef[1] : 1;
-					colSpan = colDef.length > 2 ? colDef[2]*colspan : colspan;
+					if (colDef.length > 1) {
+						colSpan = colDef[1]*colspan;
+					} else {
+						colSpan   = colspan;
+						colDef[1] = 1;
+					}
 				} else {
-					colDef = [ undefined, 1, 1];
+					colDef = [ undefined, 1];
 				}
 				var visView = this.checkData(colDef[0], 'rowViews'+(row+1)+'['+(col+1)+']');
 				html += '<div class="col-'+data.size+(colSpan > 0 ? '-'+colSpan : '')+'">'+
 							visView+
 						'</div>';
 				// Fix the column
-				col += colDef[2]-1;
+				col += colDef[1]-1;
 			}
 			html += '</div>';
 		}
