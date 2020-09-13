@@ -99,7 +99,7 @@
     You can do "if" conditions and "for" cycles.
 
 -->
-<!-- basic Container -->
+<!-- basic Layout container -->
 <script id="tplVis-bootstrap4Layout"
         type="text/ejs"
         class="vis-tpl"
@@ -107,52 +107,27 @@
         data-vis-prev='<img src="widgets/vis-bootstrap4/images/layout.png"></img>'
         data-vis-type="container"
         data-vis-name="Layout"
-        data-vis-attrs="main_view/views;header_view/views;left_view/views;right_view/views;footer_view/views">
-    <div class="vis-b4-layout container-fluid">
-        <div class="row">
-           <div class="col">
-                 <div data-vis-contains="<%= this.data.attr('header_view') %>" class="vis-widget-body vis-view-container"></div>
-           </div>
-        </div>
-        <div class="row vis-b4-content">
-           <div class="col-md-2 vis-b4-left">
-                 <div data-vis-contains="<%= this.data.attr('left_view') %>" class="vis-widget-body vis-view-container"></div>
-           </div>
-           <div class="col">
-              <div class="vis-widget vis-b4-main <%== this.data.attr('class') %>" id="<%= this.data.attr('wid') %>">
-                 <div data-vis-contains="<%= this.data.attr('main_view') %>" class="vis-widget-body vis-view-container"></div>
-              </div>
-           </div>
-           <div class="col-md-2 vis-b4-right">
-                 <div data-vis-contains="<%= this.data.attr('right_view') %>" class="vis-widget-body vis-view-container"></div>
-           </div>
-        </div>
-    </div>
-    <div class="vis-b4-responsive-footer">
-         <div data-vis-contains="<%= this.data.attr('footer_view') %>" class="vis-widget-body vis-view-container"></div>
-    </div>
+        data-vis-attrs="mainView/views;hasHeader/checkbox;headerView/views;hasLeft/checkbox;leftView/views;hasRight/checkbox;rightView/views;hasFooter/checkbox;footerView/views;">
+	<div class="vis-b4-layout container-fluid <%== this.data.attr('class') %>" style="position: relative; overflow:visible; width: 100%; height: 100%" id="<%= this.data.attr('wid') %>" <%=
+		(el) -> vis.binds['vis-bootstrap4'].createLayout(el, data);
+	%>></div>
+
 </script>
 
 
-<script id="tplVis-bootstrap4ShowInstance"
+<!-- basic Layout container -->
+<script id="tplVis-bootstrap4Grid"
         type="text/ejs"
         class="vis-tpl"
-        data-vis-prev='<div id="prev_tplVis-bootstrap4ShowInstance" style="position: relative; text-align: initial;padding: 4px "><div class="vis-widget_prev " style="width: 280px; height: 159px;" > <div class="vis-bootstrap4-class vis-widget-prev-body " style="padding:2px"> OID: hm-rpc.0.EEQ0006629.1.STATE<br> OID value: true<br> Color: <span style="color: rgb(128, 0, 0);">#800000</span><br> htmlText: <textarea readonly="" style="width:100%">asda</textarea></div>'
-        data-vis-attrs="oid/id;myColor/color;htmlText/text;"
-        data-vis-attrs0="group.extraVis-bootstrap4;extraAttr"
         data-vis-set="vis-bootstrap4"
-        data-vis-type="helper"
-        data-vis-name="Show instance">
-    <div class="vis-widget <%== this.data.attr('class') %>" style="width:230px; height:210px;" id="<%= this.data.attr('wid') %>" >
-        <div class="vis-bootstrap4-class vis-widget-body <%== this.data.attr('class') %>" style="padding:2px" >
-            OID: <%= this.data.attr('oid') %><br>
-            OID value: <%== vis.states[this.data.attr('oid') + '.val'] %><br>
-            Color: <span style="color: <%= this.data.attr('myColor') %>"><%= this.data.attr('myColor') %></span><br>
-            extraAttr: <%== this.data.attr('extraAttr') %><br>
-            Browser instance: <%= vis.instance %><br>
-            htmlText: <textarea readonly style="width: calc(100% - 10px)"><%== this.data.attr('htmlText') %></textarea><br>
-        </div>
-    </div>
+        data-vis-prev='<img src="widgets/vis-bootstrap4/images/grid.png"></img>'
+        data-vis-type="container"
+        data-vis-name="Grid"
+        data-vis-attrs="numRows[3]/number,1,12,1;numCols[3]/number,1,99,1;size[md]/select,sm,md,lg;colspan[auto]/select,auto,1,2,3,4,5,6,7,8,9,10,11,12"
+        data-vis-attrs0="group.View/byindex;rowViews(1-numRows)/text;">
+	<div class="<%== this.data.attr('class') %>" style="position: relative; width: 100% !important; height: auto !important" id="<%= this.data.attr('wid') %>" <%=
+		(el) -> vis.binds['vis-bootstrap4'].createGrid(el, data);
+	%>></div>
 </script>
 
 <script id="tplVis-bootstrap4Helper"

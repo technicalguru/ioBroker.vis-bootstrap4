@@ -44,7 +44,8 @@ vis.binds["vis-bootstrap4"] = {
             }
         }
     },
-    createWidget: function (widgetID, view, data, style) {
+
+	createWidget: function (widgetId, view, data, style) {
         var $div = $('#' + widgetID);
         // if nothing found => wait
         if (!$div.length) {
@@ -74,7 +75,119 @@ vis.binds["vis-bootstrap4"] = {
             //remember onchange handler to release bound states
             $div.data('bindHandler', onChange);
         }
-    }
+	},
+
+	checkData: function(value, name) {
+		console.log('name='+name+' value="'+value+'" type='+(typeof value));
+		if ((typeof value == 'undefined') || (value == 'undefined')) {
+			if (vis.editMode) {
+				return '<div style="border-style: dashed; border-width: 2px; border-color: #44739e; color: #ff0000; ">'+name+' is empty.</div>';
+			}
+			return '';
+		}
+		return '<div data-vis-contains="'+value+'" class="vis-widget-body vis-view-container"></div>';
+	},
+	
+    createLayout: function (el, data) {
+		var $this = $(el);
+        var html = '';
+		var visView;
+		
+		// Header
+ 		if (data.hasHeader) {
+			visView = this.checkData(data.headerView, 'headerView');
+        	html += '<div class="row">'+
+        				'<div class="col">'+
+							visView+
+        				'</div>'+
+        			'</div>';
+		}
+
+        html += '<div class="row vis-b4-content">';
+
+		// Left column
+		if (data.hasLeft) {
+			visView = this.checkData(data.leftView, 'leftView');
+        	html += '<div class="col-md-2 vis-b4-left">'+
+						visView+
+        			'</div>';
+		}
+		
+		// Main content view
+		visView = this.checkData(data.mainView, 'mainView');
+        html += '<div class="col vis-widget vis-b4-main">'+
+					visView+
+            	'</div>';
+
+		// Left column
+		if (data.hasRight) {
+			visView = this.checkData(data.rightView, 'rightView');
+        	html += '<div class="col-md-2 vis-b4-right">'+
+						visView+
+        			'</div>';
+		}
+		
+        html += '</div>';
+
+		if (data.hasFooter) {
+			visView = this.checkData(data.footerView, 'footerView');
+	    	html += '<div class="vis-b4-responsive-footer">'+
+						visView+
+    				'</div>';
+		}
+
+        $this.append(html);
+
+        // subscribe on updates of value
+        function onChange(e, newVal, oldVal) {
+            $div.find('.template-value').html(newVal);
+        }
+		
+        if (data.oid) {
+            vis.states.bind(data.oid + '.val', onChange);
+            //remember bound state that vis can release if didnt needed
+            $div.data('bound', [data.oid + '.val']);
+            //remember onchange handler to release bound states
+            $div.data('bindHandler', onChange);
+        }
+    },
+
+    createGrid: function (el, data) {
+		var $this = $(el);
+        var html = '';
+		var colspan = data.colspan != 'auto' ? '-'+data.colspan : '';
+		
+		html = '<div class="container-fluid">';
+		for (let row=0; row<data.numRows; row++) {
+ 			html += '<div class="row">';
+			var rowViews = data.attr('rowViews'+(row+1));
+			var colViews = (typeof rowViews != 'undefined') && (rowViews != '') ? new String(rowViews).split(',') : [];
+			for (let col=0; col<data.numCols; col++) {
+				var visView = this.checkData(colViews[col], 'rowViews'+(row+1)+'['+(col+1)+']');
+				html += '<div class="col-'+data.size+colspan+'">'+
+							visView+
+						'</div>';
+			}
+			html += '</div>';
+		}
+		html += '</div>';
+				
+        $this.append(html);
+
+        // subscribe on updates of value
+        function onChange(e, newVal, oldVal) {
+            $div.find('.template-value').html(newVal);
+        }
+		
+        if (data.oid) {
+            vis.states.bind(data.oid + '.val', onChange);
+            //remember bound state that vis can release if didnt needed
+            $div.data('bound', [data.oid + '.val']);
+            //remember onchange handler to release bound states
+            $div.data('bindHandler', onChange);
+        }
+	}
+	
 };
 
 vis.binds["vis-bootstrap4"].showVersion();
