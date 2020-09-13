@@ -96,8 +96,8 @@ vis.binds["vis-bootstrap4"] = {
 		// Header
  		if (data.hasHeader) {
 			visView = this.checkData(data.headerView, 'headerView');
-        	html += '<div class="row">'+
-        				'<div class="col">'+
+        	html += '<div class="vis-b4-header row">'+
+        				'<div class="col vis-b4-header">'+
 							visView+
         				'</div>'+
         			'</div>';
