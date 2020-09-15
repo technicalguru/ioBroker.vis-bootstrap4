@@ -12,19 +12,174 @@ $.extend(
     true,
     systemDictionary,
     {
-        // Add your translations here, e.g.:
-        // "size": {
-        // 	"en": "Size",
-        // 	"de": "Größe",
-        // 	"ru": "Размер",
-        // 	"pt": "Tamanho",
-        // 	"nl": "Grootte",
-        // 	"fr": "Taille",
-        // 	"it": "Dimensione",
-        // 	"es": "Talla",
-        // 	"pl": "Rozmiar",
-        // 	"zh-cn": "尺寸"
-        // }
+        "mainView": {
+         	"en": "Main View",
+         	"de": "Main View",
+         	"ru": "Main View",
+         	"pt": "Main View",
+         	"nl": "Main View",
+         	"fr": "Main View",
+         	"it": "Main View",
+         	"es": "Main View",
+         	"pl": "Main View",
+         	"zh-cn": "Main View"
+        },
+        "hasHeader": {
+         	"en": "Has Header View",
+         	"de": "Has Header View",
+         	"ru": "Has Header View",
+         	"pt": "Has Header View",
+         	"nl": "Has Header View",
+         	"fr": "Has Header View",
+         	"it": "Has Header View",
+         	"es": "Has Header View",
+         	"pl": "Has Header View",
+         	"zh-cn": "Has Header View"
+        },
+        "headerView": {
+         	"en": "Header View",
+         	"de": "Header View",
+         	"ru": "Header View",
+         	"pt": "Header View",
+         	"nl": "Header View",
+         	"fr": "Header View",
+         	"it": "Header View",
+         	"es": "Header View",
+         	"pl": "Header View",
+         	"zh-cn": "Header View"
+        },
+        "hasLeft": {
+         	"en": "Has Left View",
+         	"de": "Has Left View",
+         	"ru": "Has Left View",
+         	"pt": "Has Left View",
+         	"nl": "Has Left View",
+         	"fr": "Has Left View",
+         	"it": "Has Left View",
+         	"es": "Has Left View",
+         	"pl": "Has Left View",
+         	"zh-cn": "Has Left View"
+        },
+        "leftView": {
+         	"en": "Left View",
+         	"de": "Left View",
+         	"ru": "Left View",
+         	"pt": "Left View",
+         	"nl": "Left View",
+         	"fr": "Left View",
+         	"it": "Left View",
+         	"es": "Left View",
+         	"pl": "Left View",
+         	"zh-cn": "Left View"
+        },
+        "hasRight": {
+         	"en": "Has Right View",
+         	"de": "Has Right View",
+         	"ru": "Has Right View",
+         	"pt": "Has Right View",
+         	"nl": "Has Right View",
+         	"fr": "Has Right View",
+         	"it": "Has Right View",
+         	"es": "Has Right View",
+         	"pl": "Has Right View",
+         	"zh-cn": "Has Right View"
+        },
+        "rightView": {
+         	"en": "Right View",
+         	"de": "Right View",
+         	"ru": "Right View",
+         	"pt": "Right View",
+         	"nl": "Right View",
+         	"fr": "Right View",
+         	"it": "Right View",
+         	"es": "Right View",
+         	"pl": "Right View",
+         	"zh-cn": "Right View"
+        },
+        "hasFooter": {
+         	"en": "Has Footer View",
+         	"de": "Has Footer View",
+         	"ru": "Has Footer View",
+         	"pt": "Has Footer View",
+         	"nl": "Has Footer View",
+         	"fr": "Has Footer View",
+         	"it": "Has Footer View",
+         	"es": "Has Footer View",
+         	"pl": "Has Footer View",
+         	"zh-cn": "Has Footer View"
+        },
+        "footerView": {
+         	"en": "Footer View",
+         	"de": "Footer View",
+         	"ru": "Footer View",
+         	"pt": "Footer View",
+         	"nl": "Footer View",
+         	"fr": "Footer View",
+         	"it": "Footer View",
+         	"es": "Footer View",
+         	"pl": "Footer View",
+         	"zh-cn": "Footer View"
+        },
+        "numRows": {
+         	"en": "# rows",
+         	"de": "Anzahl Zeilen",
+         	"ru": "# rows",
+         	"pt": "# rows",
+         	"nl": "# rows",
+         	"fr": "# rows",
+         	"it": "# rows",
+         	"es": "# rows",
+         	"pl": "# rows",
+         	"zh-cn": "# rows"
+        },
+        "numCols": {
+         	"en": "# columns",
+         	"de": "Anzahl Spalten",
+         	"ru": "# columns",
+         	"pt": "# columns",
+         	"nl": "# columns",
+         	"fr": "# columns",
+         	"it": "# columns",
+         	"es": "# columns",
+         	"pl": "# columns",
+         	"zh-cn": "# columns"
+        },
+        "size": {
+         	"en": "Column Size",
+         	"de": "Spaltengröße",
+         	"ru": "Column Size",
+         	"pt": "Column Size",
+         	"nl": "Column Size",
+         	"fr": "Column Size",
+         	"it": "Column Size",
+         	"es": "Column Size",
+         	"pl": "Column Size",
+         	"zh-cn": "Column Size"
+        },
+        "colspan": {
+         	"en": "Column Span",
+         	"de": "Spaltenbreite",
+         	"ru": "Column Span",
+         	"pt": "Column Span",
+         	"nl": "Column Span",
+         	"fr": "Column Span",
+         	"it": "Column Span",
+         	"es": "Column Span",
+         	"pl": "Column Span",
+         	"zh-cn": "Column Span"
+        },
+        "rowViews": {
+         	"en": "Row Views",
+         	"de": "Views in Zeile",
+         	"ru": "Row Views",
+         	"pt": "Row Views",
+         	"nl": "Row Views",
+         	"fr": "Row Views",
+         	"it": "Row Views",
+         	"es": "Row Views",
+         	"pl": "Row Views",
+         	"zh-cn": "Row Views"
+        },
     }
 );
 
@@ -44,38 +199,6 @@ vis.binds["vis-bootstrap4"] = {
             }
         }
     },
-
-	createWidget: function (widgetId, view, data, style) {
-        var $div = $('#' + widgetID);
-        // if nothing found => wait
-        if (!$div.length) {
-            return setTimeout(function () {
-                vis.binds["vis-bootstrap4"].createWidget(widgetID, view, data, style);
-            }, 100);
-        }
-
-        var text = '';
-        text += 'OID: ' + data.oid + '</div><br>';
-        text += 'OID value: <span class="vis-bootstrap4-value">' + vis.states[data.oid + '.val'] + '</span><br>';
-        text += 'Color: <span style="color: ' + data.myColor + '">' + data.myColor + '</span><br>';
-        text += 'extraAttr: ' + data.extraAttr + '<br>';
-        text += 'Browser instance: ' + vis.instance + '<br>';
-        text += 'htmlText: <textarea readonly style="width:100%">' + (data.htmlText || '') + '</textarea><br>';
-
-        $('#' + widgetID).html(text);
-
-        // subscribe on updates of value
-        function onChange(e, newVal, oldVal) {
-            $div.find('.template-value').html(newVal);
-        }
-        if (data.oid) {
-            vis.states.bind(data.oid + '.val', onChange);
-            //remember bound state that vis can release if didnt needed
-            $div.data('bound', [data.oid + '.val']);
-            //remember onchange handler to release bound states
-            $div.data('bindHandler', onChange);
-        }
-	},
 
 	checkData: function(value, name) {
 		console.log('name='+name+' value="'+value+'" type='+(typeof value));

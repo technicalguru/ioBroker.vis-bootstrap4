@@ -49,6 +49,23 @@ This widget provides a very common responsive 3-column layout that includes a he
 
 You can switch off individual parts except the main view. Make sure that you position the widget "relative" in section "CSS Common"
 
+### Grid
+This widget provides famous grid layout that has up to 12 columns. Add this widget to an empty view and configure the number of rows and cells. You can also specify the responsive grid breakpoint (default: `md` - medium) and the colspan of each cell. Please notice that the product of number of columns and column span shall not exceed 12. `Auto` is the default setting for the colspan value.
+
+Views in the grid cells are configured by strings for each individual row. A single row's views are described as:
+
+```
+viewDescription1;viewDescription2;...;viewDescriptionN
+```
+
+Each description of a view in a row is separated by semicolon. The view description is:
+
+```
+viewName,cellSpan
+```
+
+The cellSpan is optional and defaults to `1`. Please notice that this refers to cells not grid columns. That means that setting column span to `3` and cellSpan to `2` will result in a grid layout column with span `6`.
+
 ## Developer manual
 This section is intended for the developer. It can be deleted later
 

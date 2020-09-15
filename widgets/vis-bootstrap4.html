@@ -99,7 +99,7 @@
     You can do "if" conditions and "for" cycles.
 
 -->
-<!-- basic Layout container -->
+<!-- Bootstrap 4 Layout container -->
 <script id="tplVis-bootstrap4Layout"
         type="text/ejs"
         class="vis-tpl"
@@ -115,7 +115,7 @@
 </script>
 
 
-<!-- basic Layout container -->
+<!-- Bootstrap 4 Grid container -->
 <script id="tplVis-bootstrap4Grid"
         type="text/ejs"
         class="vis-tpl"
@@ -128,18 +128,4 @@
 	<div class="<%== this.data.attr('class') %>" style="position: relative; width: 100% !important; height: auto !important" id="<%= this.data.attr('wid') %>" <%=
 		(el) -> vis.binds['vis-bootstrap4'].createGrid(el, data);
 	%>></div>
-</script>
-
-<script id="tplVis-bootstrap4Helper"
-        type="text/ejs"
-        class="vis-tpl"
-        data-vis-prev='<div id="prev_tplVis-bootstrap4Helper" style="position: relative; text-align: initial;padding: 4px "><div class="vis-widget_prev " style="width: 280px; height: 159px;" > <div class="vis-bootstrap4-class vis-widget-prev-body " style="padding:2px"> OID: hm-rpc.0.EEQ0006629.1.STATE<br> OID value: true<br> Color: <span style="color: rgb(128, 0, 0);">#800000</span><br> htmlText: <textarea readonly="" style="width:100%">asda</textarea></div>'
-        data-vis-attrs="oid/id;myColor/color;htmlText/text;"
-        data-vis-attrs0="group.extraVis-bootstrap4;extraAttr"
-        data-vis-set="vis-bootstrap4"
-        data-vis-type="helper"
-        data-vis-name="Helper">
-    <div class="vis-widget <%== this.data.attr('class') %>" style="overflow:visible; width: 230px; height: 210px" id="<%= this.data.attr('wid') %>"><%
-        vis.binds['vis-bootstrap4'].createWidget(this.data.wid, this.view, this.data, this.style);
-    %></div>
 </script>
