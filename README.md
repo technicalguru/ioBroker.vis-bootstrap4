@@ -61,10 +61,10 @@ viewDescription1;viewDescription2;...;viewDescriptionN
 Each description of a view in a row is separated by semicolon. The view description is:
 
 ```
-viewName,cellSpan
+viewName,cellSpan,cellClass
 ```
 
-The cellSpan is optional and defaults to `1`. Please notice that this refers to cells not grid columns. That means that setting column span to `3` and cellSpan to `2` will result in a grid layout column with span `6`.
+cellSpan and cellClass are optional. cellSpan defaults to `1`. Please notice that this refers to cells not grid columns. That means that setting column span to `3` and cellSpan to `2` will result in a grid layout column with span `6`.
 
 ## Developer manual
 This section is intended for the developer. It can be deleted later

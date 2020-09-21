@@ -7,7 +7,7 @@
 }
 
 body {
-	overflow: hidden;
+	/* overflow: hidden; DO not do this! */
 }
 
 .vis-b4-p-5 {
@@ -60,7 +60,7 @@ body {
 /* Tweak the VIS widgets */
 .vis-b4-grid .vis-widget {
 	position: relative !important;
-	overflow: auto !important;
+	/* overflow: auto !important; */ 
 }
 
 .vis-b4-grid img {
