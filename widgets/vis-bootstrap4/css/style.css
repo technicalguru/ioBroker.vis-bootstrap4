@@ -35,15 +35,14 @@ body {
 
 @media (min-width: 768px) {
 	.vis-b4-left {
-		min-height: 100vh;
+		/*min-height: 100vh;*/
 	}
 
 	.vis-b4-right {
-		min-height: 100vh;
+		/*min-height: 100vh;*/
 	}
 	
 	.vis-b4-responsive-footer {
-		position: fixed;
 		right: 0;
 		bottom: 0;
 		left: 0;
@@ -81,4 +80,10 @@ body {
 /* Tweak the Vis UI */
 .vis-b4-main {
 	overflow: visible;
+}
+
+@media (max-width: 767px) {
+	#vis_container {
+		height: auto !important;
+	}
 }

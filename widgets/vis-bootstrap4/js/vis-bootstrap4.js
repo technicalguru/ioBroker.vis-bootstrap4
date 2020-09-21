@@ -216,6 +216,7 @@ vis.binds["vis-bootstrap4"] = {
         var html = '';
 		var visView;
 		
+		/* Start ORIGINAL
 		// Header
  		if (data.hasHeader) {
 			visView = this.checkData(data.headerView, 'headerView');
@@ -227,7 +228,25 @@ vis.binds["vis-bootstrap4"] = {
 		}
 
         html += '<div class="row vis-b4-content">';
+		**** END ORIGINAL */
+		
+		///////////////////////////////////////////// START NEW
+        html += '<div class="vis-b4-content">';
 
+		// Header
+ 		if (data.hasHeader) {
+			visView = this.checkData(data.headerView, 'headerView');
+        	html += '<div class="vis-b4-header row">'+
+        				'<div class="col-sm-12 vis-b4-header">'+
+							visView+
+        				'</div>'+
+        			'</div>';
+		}
+
+		html += '<div class="row">';
+		
+		////////////////////////////////////////////// END NEW
+				
 		// Left column
 		if (data.hasLeft) {
 			visView = this.checkData(data.leftView, 'leftView');
