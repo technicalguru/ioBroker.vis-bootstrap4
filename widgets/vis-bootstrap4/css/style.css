@@ -55,6 +55,7 @@ body {
 	width: 100%;
 	right: 0;
 	left: 0;
+	position: absolute;
 }
 
 /* Tweak the VIS widgets */
